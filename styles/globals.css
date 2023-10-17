@@ -1,0 +1,975 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .center {
+      @apply flex justify-center items-center;
+   }
+   /* Scrollbar */
+   ::-webkit-scrollbar {
+     width: 10px;
+   }
+   
+   /* Track */
+   ::-webkit-scrollbar-track {
+     background: transparent;
+     border-radius: 20px;
+   }
+   
+   ::-webkit-scrollbar-track:hover {
+     background: transparent;
+     transition: .5s ease-in-out;
+   }
+   
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to top, #e99d2c, #f6ca87);
+      /* border-radius: 20px; */
+    }
+}
+
+#nprogress .bar {
+   background: rgb(34, 68, 221);
+   height: .2rem;
+   /* Optional: add rounded corners to the bar */
+   border-radius: 4px;
+ }
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+ }
+
+ .circle_0{
+    fill: none;
+    stroke-width: 8;
+    stroke-dasharray: 45;
+    rotate: (90deg);
+ }
+
+ .circle_0-1 {
+    fill: none;
+    stroke: #FFD700;
+    stroke-width: .3;
+    stroke-dasharray: 10;
+    animation: rotate-clockwise 150s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+  }
+  
+  @keyframes rotate-clockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+ .circle_1{
+    fill: none;
+    stroke: #008080;
+    stroke-width: .7;
+    stroke-dasharray: 38;
+    animation: rotate-clockwise-circle_1 40s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+ 
+ @keyframes rotate-clockwise-circle_1 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+
+ .circle_1-0{
+    fill: none;
+    stroke: #008080;
+    stroke-width: 5;
+    stroke-dasharray: 85;
+    animation: rotate-clockwise-circle_1-0 600s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+ 
+ @keyframes rotate-clockwise-circle_1-0 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+ .circle_2{
+    fill: none;
+    stroke: #352808;
+    stroke-width: 3;
+    stroke-dasharray: 105;
+    animation: rotate-clockwise-circle_2 25s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+
+ @keyframes rotate-clockwise-circle_2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+ .circle_3{
+    fill: none;
+    stroke: #FFD700;
+    stroke-width: .5;
+    stroke-dasharray: 105;
+    animation: rotate-clockwise-circle_3 20s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+
+ @keyframes rotate-clockwise-circle_3 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+ }
+
+ .circle_4{
+    fill: none;
+    stroke: #FF6F91;
+    stroke-width: 3;
+    stroke-dasharray: 25;
+    animation: rotate-clockwise-circle_4 200s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+
+ @keyframes rotate-clockwise-circle_4 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+ }
+ 
+ .circle_5{
+    fill: none;
+    stroke: #008080;
+    stroke-width: .9;
+    stroke-dasharray: 20;
+ }
+
+ /* .circle_5_1{
+    fill: none;
+    stroke-width: .3;
+    stroke-dasharray: 20;
+ } */
+
+ .circle_5_1 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_1 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_1 {
+    0% {
+        transform: scale(.22);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+
+ .circle_5_2 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_2 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_2 {
+    0% {
+        transform: scale(.22);
+    }
+    100% {
+      transform: scale(1.8);
+    }
+  }
+
+ .circle_5_3 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_3 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_3 {
+    0% {
+        transform: scale(.22);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
+
+ .circle_5_4 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_4 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_4 {
+    0% {
+        transform: scale(.22);
+    }
+    100% {
+      transform: scale(1.3);
+    }
+  }
+
+ .circle_5_5 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_5 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_5 {
+    0% {
+        transform: scale(0.6);
+    }
+    100% {
+      transform: scale(.22);
+    }
+  }
+
+ .circle_5_6 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_6 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_6 {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+      transform: scale(.22);
+    }
+  }
+
+ .circle_5_7 {
+    fill: none;
+    stroke-width: 0.7;
+    stroke-dasharray: 20;
+    animation: scale-animation_circle_5_7 5s ease-in-out infinite alternate;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+  
+  @keyframes scale-animation_circle_5_7 {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+      transform: scale(.22);
+    }
+  }
+  
+ .circle_6{
+    fill: none;
+    stroke-width: .6;
+    stroke-dasharray: 20;
+    animation: rotate-clockwise-circle_6 2s linear infinite;
+    transform-origin: 250px 250px; /* Set the center of rotation */
+ }
+
+ @keyframes rotate-clockwise-circle_6 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+ }
+
+ .text{
+    color: wheat;
+ }
+
+
+ 
+ .ring_1{
+    position: absolute;
+    top: 91px;
+    width: 320px;
+    height: 320px;
+    border-radius: 48%;
+    transition: .3;
+    /* border: 2px solid #fff;  */
+    animation: animate_ring_ 15s linear infinite;
+ }
+
+@keyframes animate_ring_1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    30%{
+        transform: rotate(25deg);
+    }
+    45%{
+        transform: rotate(50deg);
+    }
+    60%{
+        transform: rotate(65deg);
+    }
+    75%{
+        transform: rotate(50deg);
+    }
+    90%{
+        transform: rotate(25deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+    /* 100%{
+        transform: rotate(40deg);
+    } */
+ }
+
+ .ring_1::before{
+    content: '';
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 160px;
+    right: 309px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    background: #FF1493;
+    box-shadow: 0 0 0 4px #FF149333,
+    0 0 0 8px #FF149322;
+ }
+
+ :hover.ring_1::before{
+    box-shadow: 0 0 0 4px #FF149366,
+    0 0 0 8px #FF149333,
+    0 0 0 12px #FF149311,
+    2px 2px 2px 12px #FF149311
+    ;
+ } 
+
+ .ring_2{
+    position: absolute;
+    top: 133px;
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    transition: .3;
+    /* border: 2px solid #fff;  */
+    animation: animate_ring_ 450s linear infinite;
+ }
+
+@keyframes animate_ring_2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    40%{
+        transform: rotate(-25deg);
+    }
+    60%{
+        transform: rotate(-50deg);
+    }
+    80%{
+        transform: rotate(-25deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+ }
+
+ .ring_2::before{
+    content: '';
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 231px;
+    right: 98px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: #4169E1;
+    box-shadow: 0 0 0 2px #4169E133,
+    0 0 0 6px #4169E122;
+ }
+
+ :hover.ring_2::before{
+    box-shadow: 0 0 0 4px #4169E166,
+    0 0 0 8px #4169E133,
+    0 0 0 12px #4169E111,
+    2px 2px 2px 12px #4169E111;
+ } 
+
+
+ .ring_3{
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 243px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    transition: .3;
+    background: #00BFFF;
+    /* border: 1px solid #fff;  */
+    box-shadow: 0 0 0 2px #4169E133,
+    0 0 0 6px #4169E111;
+ }
+
+ :hover.ring_3{
+    box-shadow: 0 0 0 4px #00BFFF66,
+    0 0 0 8px #4169E133,
+    0 0 0 12px #FF149311,
+    0 0 0 12px #FFD70022;
+ }
+
+ .cover{
+    z-index: 0;
+    position: absolute;
+    top: 75px;
+    width: 350px;
+    height: 350px;
+    /* border-radius: 50%; */
+    transition: .3;
+    /* border: 2px solid #fff;  */
+ }
+
+ .ring_4{
+    position: absolute;
+    top: 118px;
+    width: 259px;
+    height: 259px;
+    border-radius: 50%;
+    transition: .3;
+ }
+
+ .ring_4::before{
+    content: '';
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 56px;
+    right: 13px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: #B8860B;
+    box-shadow: 0 0 0 4px #B8860B33,
+    0 0 0 8px #B8860B22;
+ }
+
+ :hover.ring_4::before{
+    box-shadow: 0 0 0 4px #a1780f66,
+    0 0 0 8px #B8860B33,
+    0 0 0 12px #B8860B11;
+ }
+
+/* Home Page Text Animation */
+.text_animation_0{
+    position: relative;
+    font-size: 3em;
+    color: transparent;
+}
+
+.text_animation{
+    position: relative;
+    font-size: 3em;
+    color: transparent;
+}
+
+
+.text_animation::before {
+    content: attr(data-text);
+    position: absolute;
+    color: #f8f7f4;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    /* border-right: 4px solid; */
+    border-image: linear-gradient(to bottom, #FFD700, #B8860B, #851651, #4169E1, #00BFFF) 1;
+    animation: text_animation 8s linear infinite;
+    /* filter: drop-shadow(0 0 10px #851651) drop-shadow(0 0 20px #B8860B); */
+}
+
+@keyframes text_animation {
+    0%{
+     width: 0;
+     color: #4169E1
+    } 
+    25%{
+     width: 50%;
+     color: #dbbb06
+    } 
+    50%{
+     width: 100%;
+     color: #dbbb06
+    } 
+    75%{
+     width: 50%;
+    } 
+    100%{
+     width: 0%;
+    }  
+}
+
+/* Minion CSS */
+:root {
+   --primary-gradient: radial-gradient(#d8c839 20%, #966203);
+   --primary: #fecb3e;
+   --secondary-gradient: radial-gradient(#104eab 5%, #003585);
+   --secondary: #104eab;
+   --secondary-dark: #003585;
+}
+
+
+.minion{
+   position: relative;
+   top: -40px;
+   height: 441px;
+   width: 278px;
+}
+
+.minion-body{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background: var(--primary-gradient);
+   border-radius: 40.6%;
+   cursor: pointer;
+}
+
+.left-hand,
+.right-hand{
+   position: absolute;
+   top: 50%;
+   width: 32px;
+   height: 176px;
+   background: var(--primary-gradient);
+   border-radius: 100% 100% 0 0;
+}
+
+.left-hand{
+   left: -18px;
+}
+
+.right-hand{
+   right: -18px;
+}
+
+.minion-eye{
+   position: absolute;
+   top: 16%;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.left-eye,
+.right-eye{
+   position: absolute;
+   width: 70px;
+   height: 70px;
+   background-color: #fff;
+   border-radius: 60% 100%;
+}
+
+.left-eye{
+   transform: translate(-130%, 6%) rotate(135deg);
+}
+
+.right-eye{
+   transform: translate(30%, 6%) rotate(135deg);
+}
+
+.left-eye::before,
+.right-eye::before,
+.left-eye::after,
+.right-eye::after,
+.left-glass::after,
+.right-glass::after,
+.cloths::before,
+.cloths::after,
+.middle-pocket::before,
+.middle-pocket::after,
+.left-pocket::before
+{
+   position: absolute;
+   content: "";
+}
+
+.left-eye::before,
+.right-eye::before{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  outline: 10px solid #72382d;
+}
+
+.left-eye::after,
+.right-eye::after{
+  left: 40%;
+  top: 34%;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.left-glass,
+.right-glass {
+   position: absolute;
+   top: 14.5%;
+   width: 80px;
+   height: 80px;
+   border: 5px solid #0005;
+   outline: 20px solid #bbb;
+   border-radius: 50%;
+   overflow: hidden;
+   box-shadow: 2px 25px 0 0 #0009;
+}
+
+.left-glass::after,
+.right-glass::after {
+   top: 50%;
+   transform: translateY(-50%);
+   width: 72px;
+   height: 72px;
+   background-color: var(--primary);
+   border-radius: 50%;
+   animation: eye-blink 2s ease-in-out infinite;
+   z-index: -100;
+}
+
+@keyframes eye-blink {
+   4%{transform: translateY(-50%);}
+   8%{transform: translateY(-150%);}
+   30%{transform: translateY(-150%);}
+   34%{transform: translateY(-50%);}
+   38%{transform: translateY(-150%);}
+   90%{transform: translateY(-150%);}
+   94%{transform: translateY(-50%);}
+}
+
+.left-glass{
+  transform: translateX(-120%);
+}
+
+.right-glass{
+  transform: translateX(20%);
+}
+
+.right-glass-rubber-band,
+.left-glass-rubber-band
+{
+   position: absolute;
+   transform: translateY(200%);
+   width: 44px;
+   height: 15px;
+   background-color: #333;
+   border-bottom: 2px solid #000;
+   box-shadow: 0 14px 0 0 #333;
+}
+
+.left-glass-rubber-band{
+   left: -140px;
+   border-radius: 20% 0 0 20%;
+}
+
+.right-glass-rubber-band{
+   right: -140px;
+   border-radius: 0 20% 20% 0;
+}
+
+.mouth{
+   position: absolute;
+   top: 45%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 120px;
+   height: 3px;
+   background-color: #c78100;
+   border-radius: 3px;
+   transition: .2s ease-in-out;
+}
+
+.minion:hover .mouth{
+   width: 80px;
+   height: 8px;
+}
+
+.cloths{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 68%;
+   height: 160px;
+   background: var(--secondary-gradient);
+   border: 1.5px dashed var(--primary);
+   outline: 3px solid var(--secondary);
+   border-bottom: none;
+   border-radius: 0 0 100% 100%;
+}
+
+.cloths::before,
+.cloths::after{
+   top: -33%;
+   width: 11%;
+   height: 95px;
+   background: var(--secondary-gradient);
+   border: 1.5px dashed var(--primary);
+   outline: 3px solid var(--secondary);
+}
+
+.cloths::before{
+   left: -7%;
+   transform: translateX(-50%) rotate(-55deg);
+   border-radius: 100% 0 0 0;
+   box-shadow: -5px 7px 1px 0 #0008;
+}
+
+.cloths::after{
+   right: -7%;
+   transform: translateX(50%) rotate(55deg);
+   border-radius: 0 100% 0 0;
+   box-shadow: -5px 7px 1px 0 #0008;
+}
+
+.buttons{
+   position: absolute;
+   left: 4%;
+   top: 5%;
+   width: 14px;
+   height: 14px;
+   background-color: #111;
+   border-radius: 50%;
+   outline: 1px solid var(--primary);
+   box-shadow: 157px 1px 0 0 #111,
+   157px 1px 0 1px var(--primary);
+   z-index: 100;
+}
+
+.left-pocket,
+.right-pocket{
+   position: absolute;
+   top: 50%;
+   width: 38px;
+   height: 50px;
+   background: var(--secondary-gradient);
+   border: 1.5px dashed var(--primary);
+   outline: 2px solid var(--secondary);
+}
+
+.left-pocket{
+   left: -20%;
+   border-radius: 0 0 100% 50%;
+   box-shadow: 2px 7px 0 0 #0009;
+}
+
+.left-pocket::before{
+   left: 18%;
+   top: -8%;
+   height: 148px;
+   width: 245px;
+   background: var(--secondary-dark);
+   border-radius: 0 0 100% 100%;
+   z-index: -100;
+}
+
+.right-pocket{
+   right: -20%;
+   border-radius: 0 0 50% 100%;
+   box-shadow: -2px 7px 0 0 #0009;
+}
+
+.middle-pocket,
+.middle-pocket::before,
+.middle-pocket::after{
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.middle-pocket{
+   position: absolute;
+   width: 80px;
+   height: 80px;
+   background: var(--secondary-gradient);
+   border: 1.5px dashed var(--primary);
+   outline: 2px solid var(--secondary);
+   border-radius: 0 0 100% 100%;
+   box-shadow: 0 7px 0 0 #0009;
+}
+
+.middle-pocket::before{
+   width: 40px;
+   height: 40px;
+   background-color: #111;
+   border-radius: 50%;
+}
+
+.middle-pocket::after{
+   transform: translate(-50%, -50%) rotate(45deg);
+   width: 20px;
+   height: 20px;
+   background-color: #fff;
+}
+
+.l-leg{
+   width: 50px;
+   height: 70px;
+   background: var(--secondary-dark);
+   position: relative;
+   top: 420px;
+   left: 70px;
+   z-index: -100;
+}
+
+.r-leg{
+   width: 50px;
+   height: 70px;
+   background: var(--secondary-dark);
+   position: relative;
+   top: 350px;
+   right: -160px;
+   z-index: -100;
+}
+
+.l-shoe{
+   width: 80px;
+   height: 60px;
+   background: #333;
+   border-radius: 88% 12% 70% 30%/ 71% 71% 29% 29%;
+   position: relative;
+   top: 340px;
+   left: 44px;
+   z-index: -101;   
+}
+
+.r-shoe{
+   width: 80px;
+   height: 60px;
+   background: #333;
+   border-radius: 88% 12% 70% 30%/ 71% 71% 29% 29%;
+   position: relative;
+   top: 280px;
+   right: -156px;
+   z-index: -101;   
+   transform: scaleX(-1);
+}
+
+.l-palm, .r-palm{
+   position: absolute;
+   width: 38px;
+   height: 60px;
+   border-radius: 10%;
+   background: #333;
+   top: 160px;
+   right: -3px;
+}
+
+.f1, .f2, .f3{
+   width: 14px;
+   height: 30px;
+   background: #333;
+   border-radius: 22%;
+   position: absolute;
+   top: 210px;
+}
+
+.f1{
+   top: 205px;
+   left: 18px;
+   transform: rotate(-14deg);
+}
+
+.f3{
+   right: 10px;
+}
+
+.f2{
+   top: 203px;
+   right: 20px;
+   transform: rotate(19deg);
+}
+
+
+/* gradients */
+
+.blue__gradient {
+   background: linear-gradient(-90deg, rgba(101, 136, 125, 0.082) 0%, #161508 100%);
+   filter: blur(103px);
+
+ }
+ 
+ .pink__gradient {
+   background: linear-gradient(180deg, #c08a3a 0%, #252019 100% );
+   filter: blur(300px);
+ }
+ 
+ .white__gradient {
+   background: rgba(255, 255, 255, 0.6);
+   filter: blur(750px);
+ }
+
+/* Id styles */
+
+ [data-tooltip-content] {
+   position: relative;
+   cursor: pointer;
+ }
+
+ [data-tooltip-content]::before {
+   content: attr(data-tip);
+   position: absolute;
+   top: -35px;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: #000;
+   color: #fff;
+   padding: 4px 8px;
+   border-radius: 4px;
+   font-size: 14px;
+   white-space: nowrap;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.2s, visibility 0.2s;
+ }
+
+ [data-tooltip-content]:hover::before {
+   opacity: 1;
+   visibility: visible;
+ }
+ 
