@@ -1,6 +1,6 @@
 import { FranklySpeaking, Subscribers } from "@public/images";
 import React from "react";
-import { AiFillAppstore } from "react-icons/ai";
+// import { AiFillAppstore } from "react-icons/ai";
 
 const PopTrendingCard = () => {
     // w-[230px] h-[295px] 
