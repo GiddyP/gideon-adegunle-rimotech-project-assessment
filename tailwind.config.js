@@ -23,8 +23,8 @@ module.exports = {
 				secondary: {
 					200: "#F2ECF5",
 				},
-        orange: "#FB5646",
-        lemon: "#1EAEA3"
+				orange: "#FB5646",
+				lemon: "#1EAEA3",
 			},
 			animation: {
 				"spin-slow": "spin 8s linear infinite",
