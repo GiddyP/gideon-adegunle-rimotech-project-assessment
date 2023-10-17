@@ -2,7 +2,6 @@
 import "@styles/globals.css";
 import { Jost } from "next/font/google";
 import { usePathname } from "next/navigation";
-import "react-toastify/dist/ReactToastify.css";
 
 const jost = Jost({
 	subsets: ["latin-ext"],
