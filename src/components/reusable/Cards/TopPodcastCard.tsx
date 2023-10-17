@@ -1,6 +1,6 @@
 import { FranklySpeaking } from "@public/images";
 import React from "react";
-import { AiFillAppstore } from "react-icons/ai";
+// import { AiFillAppstore } from "react-icons/ai";
 
 const TopPodcastCard = () => {
 	return (
@@ -16,7 +16,7 @@ const TopPodcastCard = () => {
 				<span className='text-sm'>By: Marc Maron</span>
 			</div>
 			<div className='flex gap-1 mt-2 items-center'>
-				<AiFillAppstore color='#E51D35' />
+				{/* <AiFillAppstore color='#E51D35' /> */}
 				<span className='text-white/70 text-sm'>Entertainment</span>
 			</div>
 		</div>
