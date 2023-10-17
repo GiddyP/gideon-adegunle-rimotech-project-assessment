@@ -1,20 +1,7 @@
 'use client';
-import CompLayout from '@src/components/CompLayout';
-import { AutoTyping } from '@src/components/reusable/AutoTyping';
 import React, { useEffect } from 'react';
 
 const page = () => {
-    useEffect(() => {
-        const careerText = ['...'];
-        const careerTyping = new AutoTyping('#loading', careerText, {
-            typeSpeed: 50,
-            deleteSpeed: 100,
-            waitBeforeDelete: 1000,
-            waitBetweenWords: 250,
-        });
-
-        careerTyping.start();
-    }, []);
 
     return (
         <></>
