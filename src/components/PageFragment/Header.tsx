@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import { BiMobileAlt } from "react-icons/bi";
+import { BsSearch } from "react-icons/bs";
 import SignupModal from "../reusable/modal/Signupmodal";
 
 const Header = () => {
@@ -26,11 +28,11 @@ const Header = () => {
 						className='flex-1 text-xs text-black/70 px-4 py-2 border border-[#ccc] outline-none rounded-lg'
 					/>
 					<div className='py-2 px-4'>
-						{/* <BsSearch color='#5A5A5A' /> */}
+						<BsSearch color='#5A5A5A' />
 					</div>
 				</div>
 				<button className='flex gap-2 items-center bg-black-100 shadow-md-[#998] px-4 rounded-2xl'>
-					{/* <BiMobileAlt color='#fff' /> */}
+					<BiMobileAlt color='#fff' />
 					<span className='text-lemon'>Download the app</span>
 				</button>
 			</div>
@@ -39,11 +41,11 @@ const Header = () => {
 					onClick={openSignUpModal}
 					className='flex gap-2 bg-lemon items-center shadow-md-[#998] px-4 py-2 rounded-lg'
 				>
-					{/* <BiMobileAlt color='#fff' /> */}
+					<BiMobileAlt color='#fff' />
 					<span className='text-white'>Sign Up</span>
 				</button>
 				<button className='flex gap-2 items-center bg-black-100 shadow-md-[#998] px-4 py-2 rounded-lg'>
-					{/* <BiMobileAlt color='#fff' /> */}
+					<BiMobileAlt color='#fff' />
 					<span className='text-white'>Sign In</span>
 				</button>
 				<SignupModal

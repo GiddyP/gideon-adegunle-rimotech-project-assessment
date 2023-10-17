@@ -1,7 +1,10 @@
 "use client";
+import AppProvider from "@src/components/config/AppProvider";
 import "@styles/globals.css";
 import { Jost } from "next/font/google";
 import { usePathname } from "next/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const jost = Jost({
 	subsets: ["latin-ext"],
@@ -55,7 +58,10 @@ export default function RootLayout({
 			<body
 				className={`${jost.className} font-mont bg-white dark:bg-dark w-full min-h-screen`}
 			>
-				{children}
+				<AppProvider>
+					<ToastContainer />
+					{children}
+				</AppProvider>
 			</body>
 		</html>
 	);

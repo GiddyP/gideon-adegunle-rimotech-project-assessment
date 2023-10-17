@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    webpack(config) {
-        config.experiments = {
-            ...config.experiments,
-            topLevelAwait: true,
-        };
-        return config;
-    }
-};
 
-module.exports = nextConfig;
+module.exports = {
+	env: {
+		NEXT_PUBLIC_BASE_URI: process.env.NEXT_PUBLIC_BASE_URI,
+	},
+};

@@ -7,6 +7,7 @@ import SearchByKeyword from "@src/components/PageFragment/SearchByKeyword";
 import TopCategory from "@src/components/PageFragment/TopCategory";
 import Header from "@src/components/PageFragment/Header";
 import Footer from "../components/PageFragment/Footer";
+
 const page = () => {
 	return (
 		<AppLayout>

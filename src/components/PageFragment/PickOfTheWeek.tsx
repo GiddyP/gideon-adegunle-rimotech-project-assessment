@@ -1,5 +1,6 @@
 import { FranklySpeaking, Navigation1, Navigation2 } from "@public/images";
 import React from "react";
+import { BsStarFill } from "react-icons/bs";
 import TopPodcastCard from "../reusable/Cards/TopPodcastCard";
 
 const PickOfTheWeek = () => {
@@ -7,7 +8,7 @@ const PickOfTheWeek = () => {
 		<div className="mt-[75px]">
 			<div className='flex px-5 items-center gap-1 pt-5'>
 				<div className=''>
-					{/* <BsStarFill size={15} color='#7B61FF' /> */}
+					<BsStarFill size={15} color='#7B61FF' />
 				</div>
 				<h4 className='text-white font-extrabold leading-6 py-0'>
 					Pick of the week
