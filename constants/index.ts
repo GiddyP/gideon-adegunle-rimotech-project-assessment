@@ -1,4 +1,5 @@
 export const BASE_URI = process.env.NEXT_PUBLIC_BASE_URI;
+export const AUTH_TOKEN_KEY = "LOGIN_ACCESS";
 
 interface User {
 	id: number;

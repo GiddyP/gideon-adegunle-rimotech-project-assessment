@@ -23,6 +23,13 @@ export const api = createApi({
 				body: payload,
 			}),
 		}),
+		// register: builder.mutation<RegisterResponse, RegisterPayload>({
+		// 	query: (payload) => ({
+		// 		url: "/api/listeners/register",
+		// 		method: "POST",
+		// 		body: payload,
+		// 	}),
+		// }),
 	}),
 });
 

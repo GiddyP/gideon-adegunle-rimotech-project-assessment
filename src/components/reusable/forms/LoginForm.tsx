@@ -1,5 +1,5 @@
 "use client";
-import { LoginPayload, LoginResponse } from "@constants";
+import { AUTH_TOKEN_KEY, LoginPayload, LoginResponse } from "@constants";
 import { SignupImage } from "@public/images";
 import { useLoginMutation } from "@src/components/config/features/api";
 import React, { ChangeEvent, useEffect, useState } from "react";
@@ -7,15 +7,23 @@ import { AiOutlineRight } from "react-icons/ai";
 import { RiGoogleLine } from "react-icons/ri";
 import { ClipLoader } from "react-spinners";
 import FormToast from "../Toast/SigninToast";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 interface LoginFormProps {
 	openLoginModal: () => void;
 	openSignUpModal: () => void;
+	onClose: () => void;
 }
 
-const LoginForm = ({ openLoginModal, openSignUpModal }: LoginFormProps) => {
-    const [login, { isLoading, isError, error, data: loginData }] =
-    useLoginMutation();
+const LoginForm = ({
+	openLoginModal,
+	openSignUpModal,
+	onClose,
+}: LoginFormProps) => {
+	const [login, { isLoading, isError, error, data: loginData }] =
+		useLoginMutation();
+	const router = useRouter();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -28,7 +36,7 @@ const LoginForm = ({ openLoginModal, openSignUpModal }: LoginFormProps) => {
 		setPassword(e.target.value);
 	};
 
-    const handleFormSubmit = async () => {
+	const handleFormSubmit = async () => {
 		const payload: LoginPayload = {
 			email: email,
 			password: password,
@@ -36,12 +44,12 @@ const LoginForm = ({ openLoginModal, openSignUpModal }: LoginFormProps) => {
 		login(payload);
 	};
 
-    const handleLoginData = (data: LoginResponse) => {
+	const handleLoginData = (data: LoginResponse) => {
 		console.log(data);
-		// Cookies.set(AUTH_TOKEN_KEY, data?.token);
-		// localStorage.setItem(AUTH_TOKEN_KEY, data?.token);
-	
-		// router.push("/user/dashboard")
+		Cookies.set(AUTH_TOKEN_KEY, data?.data?.token);
+		localStorage.setItem(AUTH_TOKEN_KEY, data?.data?.token);
+		onClose();
+		// router.push("/")
 		FormToast({
 			message: "Login Successful",
 			success: true,
@@ -52,11 +60,11 @@ const LoginForm = ({ openLoginModal, openSignUpModal }: LoginFormProps) => {
 		if (loginData) {
 			handleLoginData(loginData);
 		}
-    }, [loginData]);
-    
-    useEffect(() => {
-        if (error) {
-            console.log(error)
+	}, [loginData]);
+
+	useEffect(() => {
+		if (error) {
+			console.log(error);
 			if (error) {
 				if ("data" in error) {
 					const res: any = error.data;
@@ -113,7 +121,7 @@ const LoginForm = ({ openLoginModal, openSignUpModal }: LoginFormProps) => {
 						onClick={handleFormSubmit}
 						className='flex gap-2 bg-[#7B61FF] hover:bg-[#7B61FF]/50 transition items-center px-8 py-2 rounded-[32px] font-bold text-base'
 					>
-                        {isLoading ? <ClipLoader color='#d4d3d3' size={20} /> : "Log in"}
+						{isLoading ? <ClipLoader color='#d4d3d3' size={20} /> : "Log in"}
 					</button>
 					<button
 						// onClick={openLoginModal}

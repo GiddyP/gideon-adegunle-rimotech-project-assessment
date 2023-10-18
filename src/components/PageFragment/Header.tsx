@@ -1,21 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import { BiMobileAlt, BiUser } from "react-icons/bi";
+import { BiLogOut, BiMobileAlt, BiUser } from "react-icons/bi";
 import { BsApple, BsFacebook, BsSearch } from "react-icons/bs";
 import SignupModal from "../reusable/modal/Signupmodal";
 import { RiGoogleLine } from "react-icons/ri";
+import { signOut } from "@utils/lib";
 import { AiOutlineAudio, AiOutlineRight } from "react-icons/ai";
 import { HiMail } from "react-icons/hi";
 import { SignupImage } from "@public/images";
 import RegistrationForm from "../reusable/forms/RegistrationForm";
 import { useLoginMutation } from "../config/features/api";
 import LoginForm from "../reusable/forms/LoginForm";
+import useToken from "../hooks/useToken";
 
 const Header = () => {
 	const [isModalSignUpOpen, setIsModalSignUpOpen] = useState(false);
 	const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
 	const [isRegisterFormOpen, setIsRegisterFormOpen] = useState(false);
-
+	const { token } = useToken();
 
 	const openSignUpModal = () => {
 		setIsModalSignUpOpen(true);
@@ -114,7 +116,6 @@ const Header = () => {
 		);
 	};
 
-
 	return (
 		<header className='h-[77px] bg-black-400 flex w-4/5 gap-24 items-center px-6 fixed top-0'>
 			<div className='flex justify-between flex-1'>
@@ -134,20 +135,32 @@ const Header = () => {
 				</button>
 			</div>
 			<div className='flex gap-4'>
-				<button
-					onClick={openSignUpModal}
-					className='flex gap-2 bg-lemon hover:bg-lemon/50 transition items-center shadow-md-[#998] px-4 py-2 rounded-lg'
-				>
-					<AiOutlineAudio color='#fff' />
-					<span className='text-white'>Sign Up</span>
-				</button>
-				<button
-					onClick={openLoginModal}
-					className='flex gap-2 items-center bg-black-100 hover:bg-black-200 transition shadow-md-[#998] px-4 py-2 rounded-lg'
-				>
-					<BiUser color='#fff' />
-					<span className='text-white'>Log In</span>
-				</button>
+				{token ? (
+					<button
+						onClick={() => signOut()}
+						className='flex gap-2 items-center bg-black-100 hover:bg-black-200 transition shadow-md-[#998] px-4 py-2 rounded-lg'
+					>
+						<BiLogOut color='#fff' />
+						<span className='text-white'>Log Out</span>
+					</button>
+				) : (
+					<>
+						<button
+							onClick={openSignUpModal}
+							className='flex gap-2 bg-lemon hover:bg-lemon/50 transition items-center shadow-md-[#998] px-4 py-2 rounded-lg'
+						>
+							<AiOutlineAudio color='#fff' />
+							<span className='text-white'>Sign Up</span>
+						</button>
+						<button
+							onClick={openLoginModal}
+							className='flex gap-2 items-center bg-black-100 hover:bg-black-200 transition shadow-md-[#998] px-4 py-2 rounded-lg'
+						>
+							<BiUser color='#fff' />
+							<span className='text-white'>Log In</span>
+						</button>
+					</>
+				)}
 				<SignupModal
 					isOpen={isModalSignUpOpen}
 					onClose={closeSignUpModal}
@@ -158,7 +171,13 @@ const Header = () => {
 				<SignupModal
 					isOpen={isModalLoginOpen}
 					onClose={closeLoginModal}
-					content={<LoginForm openSignUpModal={openSignUpModal} openLoginModal={openLoginModal} />}
+					content={
+						<LoginForm
+							openSignUpModal={openSignUpModal}
+							openLoginModal={openLoginModal}
+							onClose={closeLoginModal}
+						/>
+					}
 					buttonText='Login'
 					setIsOpen={setIsModalLoginOpen}
 				/>
