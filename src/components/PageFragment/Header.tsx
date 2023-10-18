@@ -23,35 +23,62 @@ const Header = () => {
 		closeSignUpModal();
 	};
 
-	const SignupContent = () => (
-		<div className="signup-content">
-		  <div className="signup-options">
-			<div className="signup-option">
-			  <RiGoogleLine size={23} color="#282828" />
-			  <span className="option-text">Continue with Google</span>
-			  <AiOutlineRight color="#282828" />
+	const SignupContent = () => {
+		const signupOptions = [
+			{
+				icon: <RiGoogleLine size={23} color='#282828' />,
+				text: "Continue with Google",
+			},
+			{
+				icon: <BsFacebook size={23} color='#282828' />,
+				text: "Continue with Facebook",
+			},
+			{
+				icon: <BsApple size={23} color='#282828' />,
+				text: "Continue with Apple ID",
+			},
+			{
+				icon: <HiMail size={23} color='#282828' />,
+				text: "Create account with your email",
+			},
+		];
+		return (
+			<div className='flex w-full justify-center gap-5 px-10'>
+				<div className='flex w-1/2 flex-col items-center gap-3'>
+					<h4 className='text-2xl font-extrabold text-white'>
+						Create an account
+					</h4>
+					<ul className='flex flex-col gap-4'>
+						{signupOptions.map((option, index) => (
+							<li
+								key={index}
+								className='bg-white rounded-[32px] flex justify-between items-center px-6 w-[351px] h-[59px]'
+							>
+								<span className='bg-[#EDE6E5] p-2 rounded-full'>
+									{option.icon}
+								</span>
+								<span className='flex-[.9] text-base text-[#282828] font-semibold'>
+									{option.text}
+								</span>
+								<span>
+									<AiOutlineRight color='#282828' />
+								</span>
+							</li>
+						))}
+					</ul>
+					<h4 className='text-base text-[#CDCDCD] leading-8'>
+						Already have an account? <span>Log in</span>
+					</h4>
+				</div>
+				<div className='w-1/2 flex flex-col items-center'>
+					<img src={SignupImage.src} alt={SignupImage.alt} />
+					<h4 className='text-[#7B61FF] text-2xl leading-8 text-center font-extrabold'>
+						Join a community of podcast lovers and creators
+					</h4>
+				</div>
 			</div>
-			<div className="signup-option">
-			  <BsFacebook size={23} color="#282828" />
-			  <span className="option-text">Continue with Facebook</span>
-			  <AiOutlineRight color="#282828" />
-			</div>
-			<div className="signup-option">
-			  <BsApple size={23} color="#282828" />
-			  <span className="option-text">Continue with Apple ID</span>
-			  <AiOutlineRight color="#282828" />
-			</div>
-			<div className="signup-option">
-			  <HiMail size={23} color="#282828" />
-			  <span className="option-text">Create account with your email</span>
-			  <AiOutlineRight color="#282828" />
-			</div>
-		  </div>
-		  <h4 className="login-text">
-			Already have an account? Log in
-		  </h4>
-		</div>
-	  );
+		);
+	};
 
 	return (
 		<header className='h-[77px] bg-black-400 flex w-4/5 gap-24 items-center px-6 fixed top-0'>

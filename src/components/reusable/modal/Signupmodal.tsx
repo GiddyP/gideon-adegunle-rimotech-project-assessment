@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { RiGoogleLine } from "react-icons/ri";
 import React from "react";
 import { SignupImage } from "@public/images";
-import { AiOutlineRight } from "react-icons/ai";
+import { LiaTimesSolid } from "react-icons/lia";
 
 interface ModalProps {
 	isOpen: boolean;
@@ -37,12 +37,18 @@ const SignupModal: React.FC<ModalProps> = ({
 		>
 			<div className='bg-black-200/50 bg-opacity-75 absolute inset-0' />
 			<div
-				className='flex flex-col w-[1003px] h-[511px] bg-[#050505] justify-center items-center rounded-lg drop-shadow-lg border border-lemon'
+				className='flex flex-col w-[1003px] h-[511px] bg-[#050505] justify-center items-center rounded-lg drop-shadow-lg border border-lemon relative'
 				style={{
 					boxShadow: "0px 0px 4px 2px #1EAEA380",
 				}}
 			>
-			{content}
+				<button
+					onClick={handleCloseModalClick}
+					className='bg-[#525252] hover:bg-black-300 transition w-fit rounded-full absolute top-3 right-5 p-1'
+				>
+					<LiaTimesSolid size={20} color='#fff' />
+				</button>
+				{content}
 
 				{/* <div className='flex w-full justify-center gap-4 mt-3'>
 					<button
