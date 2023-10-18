@@ -1,12 +1,14 @@
 import { homeImageName1 } from "@public/images";
 import React from "react";
 import { PiMicrophoneStageThin, PiWaveformDuotone } from "react-icons/pi";
-import { AiFillStar, AiOutlineCaretDown } from "react-icons/ai";
+import { AiFillStar, AiOutlineAudio, AiOutlineCaretDown } from "react-icons/ai";
 import { BiSolidHeart } from "react-icons/bi";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { FiAward } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa";
 import { MdOutlineQueueMusic } from "react-icons/md";
+import { TbUserHeart } from "react-icons/tb";
+import { IoIosHeadset } from "react-icons/io";
 
 const Sidebar = () => {
 	const menuItems = [
@@ -33,16 +35,28 @@ const Sidebar = () => {
 			text: "Your playlist",
 		},
 		{
-			icon: <AiFillStar size={20} color='#fff' />,
+			icon: <IoIosHeadset size={20} color='#fff' />,
 			text: "Recently played",
 		},
 		{
-			icon: <FiAward size={20} color='#fff' />,
+			icon: <TbUserHeart size={20} color='#fff' />,
 			text: "Subscription & Hosts",
 		},
-		
 	];
-	// box-shadow: 0px 0px 20px 0px #0000001A;
+	const menuItems03 = [
+		{
+			icon: <AiOutlineAudio size={20} color='#fff' />,
+			text: "Wokpa for podcasters",
+		},
+		{
+			icon: <CgMenuLeftAlt size={20} color='#fff' />,
+			text: "Wokpa for advertisers",
+		},
+		{
+			icon: <TbUserHeart size={20} color='#fff' />,
+			text: "Read our blogs",
+		},
+	];
 	return (
 		<aside
 			className='w-1/5 text-white bg-black-200 h-full'
@@ -50,7 +64,7 @@ const Sidebar = () => {
 				boxShadow: "0px 0px 20px 0px #0000001A",
 			}}
 		>
-			<div className='fixed text-white bg-black-200 h-full w-full'>
+			<div className='fixed text-white bg-black-200 h-full w-1/5'>
 				<div className=''>
 					<img
 						src={homeImageName1.src}
@@ -58,7 +72,7 @@ const Sidebar = () => {
 						className='pl-6 mb-5 pt-2'
 					/>
 				</div>
-				<ul className='flex flex-col gap-2'>
+				<ul className='flex flex-col'>
 					{menuItems.map((item, index) => (
 						<li
 							key={index}
@@ -81,7 +95,7 @@ const Sidebar = () => {
 					<FaPlus size={20} color='#919191' />
 				</section>
 
-				<ul className='flex flex-col gap-2 mt-3'>
+				<ul className='flex flex-col mt-3'>
 					{menuItems02.map((item, index) => (
 						<li
 							key={index}
@@ -92,26 +106,17 @@ const Sidebar = () => {
 						</li>
 					))}
 				</ul>
-				{/* <hr /> */}
-				<ul className='flex flex-col gap-1 pb-4'>
-					<li className='flex items-center gap-1 text-base leading-6 font-[500] pl-6 py-2'>
-						<div className='p-1 rounded-md bg-black-300'>
-							<PiWaveformDuotone size={22} />
-						</div>
-						<span>Discover</span>
-					</li>
-					<li className='flex items-center gap-1 text-base leading-6 font-[500] pl-6 py-2'>
-						<div className='p-1 rounded-md bg-black-300'>
-							<PiWaveformDuotone size={22} />
-						</div>
-						<span>Discover</span>
-					</li>
-					<li className='flex items-center gap-1 text-base leading-6 font-[500] pl-6 py-2'>
-						<div className='p-1 rounded-md bg-black-300'>
-							<PiWaveformDuotone size={22} />
-						</div>
-						<span>Discover</span>
-					</li>
+
+				<ul className='flex flex-col pb-4 border-t border-[#D9D9D99C] w-full mt-3'>
+					{menuItems03.map((item, index) => (
+						<li
+							key={index}
+							className={`flex items-center bg-gradient-to-b hover:from-[#acacac] hover:to-[#666666] transition cursor-pointer gap-3 text-base leading-6 font-extrabold pl-6 py-2 ${index === 0 && 'mt-3'}`}
+						>
+							<div className='p-1 rounded-md bg-black-300'>{item.icon}</div>
+							<span>{item.text}</span>
+						</li>
+					))}
 				</ul>
 			</div>
 		</aside>

@@ -1,15 +1,15 @@
 "use client";
 import AppProvider from "@src/components/config/AppProvider";
 import "@styles/globals.css";
-import { Jost } from "next/font/google";
+import { Jost, Inter } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const jost = Jost({
+const inter = Inter({
 	subsets: ["latin-ext"],
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-	style: ["normal", "italic"],
+	style: ["normal"],
 });
 
 interface PageData {
@@ -56,7 +56,7 @@ export default function RootLayout({
 				<meta name='viewport' content='initial-scale=1, width=device-width' />
 			</head>
 			<body
-				className={`${jost.className} font-mont bg-white dark:bg-dark w-full min-h-screen`}
+				className={`${inter.className} font-mont bg-white dark:bg-dark w-full min-h-screen`}
 			>
 				<AppProvider>
 					<ToastContainer />
