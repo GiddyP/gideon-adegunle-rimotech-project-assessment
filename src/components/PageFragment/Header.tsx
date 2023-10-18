@@ -184,7 +184,7 @@ const Header = () => {
 				<SignupModal
 					isOpen={isRegisterFormOpen}
 					onClose={closeRegisterModal}
-					content={<RegistrationForm />}
+					content={<RegistrationForm onClose={closeLoginModal} />}
 					buttonText='Register'
 					setIsOpen={setIsRegisterFormOpen}
 				/>

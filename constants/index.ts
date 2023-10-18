@@ -32,3 +32,19 @@ export interface LoginPayload {
 	email: any;
 	password: any;
 }
+export interface RegisterResponse {
+	massage: any;
+}
+
+export interface RegisterPayload {
+	first_name: string;
+	last_name: string;
+	email: string;
+	phone: string;
+	country: string;
+	state: string;
+	gender: string;
+	address: string;
+	password: string;
+	password_confirmation: string;
+}
