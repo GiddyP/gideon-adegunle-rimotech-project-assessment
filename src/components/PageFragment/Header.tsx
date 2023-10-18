@@ -119,6 +119,32 @@ const Header = () => {
 					<h4 className='text-base font-medium text-white'>
 						Log in with email.
 					</h4>
+					<div className='flex flex-col gap-3'>
+						<input
+							type='text'
+							placeholder='Enter your email'
+							className='text-base w-[351px] h-[59px] leading-5 text-white bg-transparent rounded-[32px] px-4 py-2 border-2 border-white outline-none'
+						/>
+						<input
+							type='text'
+							placeholder='Enter password'
+							className='text-base w-[351px] h-[59px] leading-5 text-white bg-transparent rounded-[32px] px-4 py-2 border-2 border-white outline-none'
+						/>
+					</div>
+					<div className='flex w-full justify-between px-12 mt-3'>
+						<button
+							onClick={openSignUpModal}
+							className='flex gap-2 bg-[#7B61FF] hover:bg-[#7B61FF]/50 transition items-center px-8 py-2 rounded-[32px] font-bold text-base'
+						>
+							Log in
+						</button>
+						<button
+							onClick={openLoginModal}
+							className='flex gap-2 items-center transition text-white px-4 py-2 text-xs'
+						>
+							Forgot password?
+						</button>
+					</div>
 				</div>
 				<div className='w-1/2 flex flex-col items-center'>
 					<img src={SignupImage.src} alt={SignupImage.alt} />
