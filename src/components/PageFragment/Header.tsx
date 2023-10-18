@@ -119,7 +119,7 @@ const Header = () => {
 					<h4 className='text-base font-medium text-white'>
 						Log in with email.
 					</h4>
-					<div className='flex flex-col gap-3'>
+					<div className='flex flex-col gap-4 mt-2'>
 						<input
 							type='text'
 							placeholder='Enter your email'
