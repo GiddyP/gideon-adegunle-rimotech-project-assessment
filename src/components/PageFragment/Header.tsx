@@ -51,7 +51,7 @@ const Header = () => {
 				<SignupModal
 					isOpen={isModalSignUpOpen}
 					onClose={closeSignUpModal}
-					content={<p>Put your sign-up form or content here</p>}
+					content={<p></p>}
 					buttonText='Sign Up'
 					setIsOpen={setIsModalSignUpOpen}
 				/>

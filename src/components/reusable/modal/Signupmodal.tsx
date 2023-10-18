@@ -31,8 +31,8 @@ const SignupModal: React.FC<ModalProps> = ({
 				isOpen ? "" : "hidden"
 			}`}
 		>
-			<div className='bg-secondary-200 bg-opacity-75 absolute inset-0' />
-			<div className='bg-white flex flex-col w-full md:w-[35rem] gap-2 md:gap-4 py-4 md:py-8 px-2 sm:px-0 justify-center items-center rounded-lg drop-shadow-lg'>
+			<div className='bg-black-200/30 bg-opacity-75 absolute inset-0' />
+			<div className='flex flex-col w-[1003px] h-[511px] bg-[#050505] justify-center items-center rounded-lg drop-shadow-lg'>
 				{content}
 				<div className='flex w-full justify-center gap-4 mt-3'>
 					<button
