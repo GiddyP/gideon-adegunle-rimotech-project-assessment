@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
 	reducerPath: "api",
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'https://wokpa.ddns.net',
+		baseUrl: BASE_URI,
 		fetchFn: async (...args) => {
 			const result = await fetch(...args);
 			if (result.status === 401 && window.location.pathname != "/login") {
