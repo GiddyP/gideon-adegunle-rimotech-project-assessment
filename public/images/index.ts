@@ -18,3 +18,7 @@ export const Subscribers = {
 	src: "./images/subscribers.png",
 	alt: "Subscribers 2",
 };
+export const SignupImage = {
+	src: "./images/signup-image.png",
+	alt: "signup image",
+};
