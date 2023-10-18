@@ -1,10 +1,10 @@
-import { BASE_URI } from "@constants";
+import { BASE_URI, LoginPayload, LoginResponse } from "@constants";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
 	reducerPath: "api",
 	baseQuery: fetchBaseQuery({
-		baseUrl: BASE_URI,
+		baseUrl: 'https://wokpa.ddns.net',
 		fetchFn: async (...args) => {
 			const result = await fetch(...args);
 			if (result.status === 401 && window.location.pathname != "/login") {
@@ -15,7 +15,15 @@ export const api = createApi({
 		},
 	}),
 
-	endpoints: (builder) => ({}),
+	endpoints: (builder) => ({
+		login: builder.mutation<LoginResponse, LoginPayload>({
+			query: (payload) => ({
+				url: "/api/listeners/login",
+				method: "POST",
+				body: payload,
+			}),
+		}),
+	}),
 });
 
-export const {} = api;
+export const {useLoginMutation} = api;

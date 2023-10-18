@@ -7,10 +7,15 @@ import { RiGoogleLine } from "react-icons/ri";
 import { AiOutlineAudio, AiOutlineRight } from "react-icons/ai";
 import { HiMail } from "react-icons/hi";
 import { SignupImage } from "@public/images";
+import RegistrationForm from "../reusable/forms/RegistrationForm";
+import { useLoginMutation } from "../config/features/api";
+import LoginForm from "../reusable/forms/LoginForm";
 
 const Header = () => {
 	const [isModalSignUpOpen, setIsModalSignUpOpen] = useState(false);
 	const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+	const [isRegisterFormOpen, setIsRegisterFormOpen] = useState(false);
+
 
 	const openSignUpModal = () => {
 		setIsModalSignUpOpen(true);
@@ -26,12 +31,22 @@ const Header = () => {
 	const closeLoginModal = () => {
 		setIsModalLoginOpen(false);
 	};
+	const openRegisterModal = () => {
+		setIsRegisterFormOpen(true);
+	};
+
+	const closeRegisterModal = () => {
+		setIsRegisterFormOpen(false);
+	};
 
 	const handleSignUp = () => {
 		closeSignUpModal();
 	};
 	const handleLogin = () => {
 		closeLoginModal();
+	};
+	const handleRegister = () => {
+		closeRegisterModal();
 	};
 
 	const SignupContent = () => {
@@ -51,6 +66,7 @@ const Header = () => {
 			{
 				icon: <HiMail size={23} color='#282828' />,
 				text: "Create account with your email",
+				onClick: openRegisterModal,
 			},
 		];
 		return (
@@ -63,7 +79,8 @@ const Header = () => {
 						{signupOptions.map((option, index) => (
 							<li
 								key={index}
-								className='bg-white rounded-[32px] flex justify-between items-center px-6 w-[351px] h-[59px]'
+								className='bg-white rounded-[32px] flex justify-between items-center px-6 w-[351px] h-[59px] cursor-pointer'
+								onClick={option.onClick}
 							>
 								<span className='bg-[#EDE6E5] p-2 rounded-full'>
 									{option.icon}
@@ -96,65 +113,7 @@ const Header = () => {
 			</div>
 		);
 	};
-	const LoginContent = () => {
-		return (
-			<div className='flex w-full justify-center gap-5 px-10'>
-				<div className='flex w-1/2 flex-col items-center gap-3'>
-					<h4 className='text-xl font-extrabold text-white'>
-						Log in with your socials below
-					</h4>
-					<ul className='flex flex-col gap-4'>
-						<li className='bg-white rounded-[32px] flex justify-between items-center px-9 w-[351px] h-[59px]'>
-							<span className='bg-[#EDE6E5] p-2 rounded-full'>
-								<RiGoogleLine size={23} color='#282828' />
-							</span>
-							<span className='flex-[.8] text-base text-[#282828] font-semibold'>
-								Choose account
-							</span>
-							<span>
-								<AiOutlineRight color='#282828' />
-							</span>
-						</li>
-					</ul>
-					<h4 className='text-base font-medium text-white'>
-						Log in with email.
-					</h4>
-					<div className='flex flex-col gap-4 mt-2'>
-						<input
-							type='text'
-							placeholder='Enter your email'
-							className='text-base w-[351px] h-[59px] leading-5 text-white bg-transparent rounded-[32px] px-4 py-2 border-2 border-white outline-none'
-						/>
-						<input
-							type='text'
-							placeholder='Enter password'
-							className='text-base w-[351px] h-[59px] leading-5 text-white bg-transparent rounded-[32px] px-4 py-2 border-2 border-white outline-none'
-						/>
-					</div>
-					<div className='flex w-full justify-between px-12 mt-3'>
-						<button
-							onClick={openSignUpModal}
-							className='flex gap-2 bg-[#7B61FF] hover:bg-[#7B61FF]/50 transition items-center px-8 py-2 rounded-[32px] font-bold text-base'
-						>
-							Log in
-						</button>
-						<button
-							onClick={openLoginModal}
-							className='flex gap-2 items-center transition text-white px-4 py-2 text-xs'
-						>
-							Forgot password?
-						</button>
-					</div>
-				</div>
-				<div className='w-1/2 flex flex-col items-center'>
-					<img src={SignupImage.src} alt={SignupImage.alt} />
-					<h4 className='text-[#7B61FF] text-2xl leading-8 text-center font-extrabold'>
-						Join a community of podcast lovers and creators
-					</h4>
-				</div>
-			</div>
-		);
-	};
+
 
 	return (
 		<header className='h-[77px] bg-black-400 flex w-4/5 gap-24 items-center px-6 fixed top-0'>
@@ -198,10 +157,17 @@ const Header = () => {
 				/>
 				<SignupModal
 					isOpen={isModalLoginOpen}
-					onClose={LoginContent}
-					content={<LoginContent />}
+					onClose={closeLoginModal}
+					content={<LoginForm openSignUpModal={openSignUpModal} openLoginModal={openLoginModal} />}
 					buttonText='Login'
 					setIsOpen={setIsModalLoginOpen}
+				/>
+				<SignupModal
+					isOpen={isRegisterFormOpen}
+					onClose={closeRegisterModal}
+					content={<RegistrationForm />}
+					buttonText='Register'
+					setIsOpen={setIsRegisterFormOpen}
 				/>
 			</div>
 		</header>
