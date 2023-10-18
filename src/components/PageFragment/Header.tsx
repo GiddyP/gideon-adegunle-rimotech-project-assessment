@@ -87,7 +87,7 @@ const Header = () => {
 								<span className='bg-[#EDE6E5] p-2 rounded-full'>
 									{option.icon}
 								</span>
-								<span className='flex-[.9] text-base text-[#282828] font-semibold'>
+								<span className='flex-1 text-base text-[#282828] font-semibold'>
 									{option.text}
 								</span>
 								<span>
