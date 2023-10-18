@@ -49,11 +49,11 @@ const LoginForm = ({
 		Cookies.set(AUTH_TOKEN_KEY, data?.data?.token);
 		localStorage.setItem(AUTH_TOKEN_KEY, data?.data?.token);
 		onClose();
-		// router.push("/")
 		FormToast({
 			message: "Login Successful",
 			success: true,
 		});
+		window.location.reload();
 	};
 
 	useEffect(() => {
