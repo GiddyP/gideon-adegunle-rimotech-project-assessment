@@ -4,7 +4,7 @@ import PopTrendingCard from "../reusable/Cards/PopTrendingCard";
 
 const PopularAndTrending = () => {
 	return (
-		<div>
+		<div className="px-3">
 			<div className='flex items-center gap-1 pt-5'>
 				<div className=''>
 					<SiAirplayaudio size={15} color='#7B61FF' />
